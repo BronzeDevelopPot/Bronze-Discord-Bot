@@ -105,3 +105,20 @@ def signUp(_name, _id):
     sheet.cell(row = _row, column = user_money, value = default_money)
 
     saveFile()
+    
+# =============================== Info ===============================
+
+'''
+유저 정보에서 level과 money 찾기
+@param _row 유저가 현재 있는 행
+'''
+def userInfo(_row):
+    
+    loadFile()
+
+    _level = sheet.cell(_row, user_level).value
+    _money = sheet.cell(_row, user_money).value
+
+    saveFile()
+
+    return _level, _money
