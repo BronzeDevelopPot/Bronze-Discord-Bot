@@ -122,3 +122,49 @@ def userInfo(_row):
     saveFile()
 
     return _level, _money
+
+# =============================== Money ===============================
+
+'''
+유저 정보에서 돈 정보 찾기
+@param _name 유저의 이름
+@param _row 유저가 현재 있는 행
+'''
+def getMoney(_name, _row):
+
+    loadFile()
+
+    result = sheet.cell(_row, user_money).value
+
+    saveFile()
+
+    return result
+
+'''
+돈 얼마나 변했는지 (도박 기능 돈 변동 때문에 넣은 함수)
+@param _target 상대 유저 (나중에 송금 기능 추가할 때 사용할 것)
+@param _row 유저가 현재 있는 행
+@param _amount 돈 얼마나 변했는지
+'''
+def modifyMoney(_target, _row, _amount):
+
+    loadFile()
+
+    sheet.cell(_row, user_money).value += _amount
+
+    saveFile()
+
+'''
+돈 얼마나 잃었는지
+ㄴ> 내정보에서 잃은 돈 보여 주기 위해 사용
+@param _target 상대 유저 (나중에 송금 기능 추가할 때 사용할 것)
+@param _row 유저가 현재 있는 행
+@param _amount 돈 얼마나 변했는지
+'''
+def moneyLoss(_target, _row, _amount):
+
+    loadFile()
+
+    sheet.cell(_row, user_loss).value += _amount
+
+    saveFile()
