@@ -93,7 +93,7 @@ async def 가위바위보(ctx, rsp, money, mul):
                             modifyMoney(ctx.author.name, userRow, 0)
 
                         elif botRSP == "바위":
-                            result = "도박 접고 팡푸나 하시죠?"
+                            result = "도박 접고 ~나 하시죠?"
                             betting = int(mul) * int(money)
                             
                             modifyMoney(ctx.author.name, userRow, -int(betting))
@@ -127,7 +127,7 @@ async def 가위바위보(ctx, rsp, money, mul):
                             modifyMoney(ctx.author.name, userRow, 0)
                         
                         elif botRSP == "보":
-                            result = "도박 접고 팡푸나 하시죠?"
+                            result = "도박 접고 ~나 하시죠?"
                             betting = int(mul) * int(money)
 
                             modifyMoney(ctx.author.name, userRow, -int(betting))
